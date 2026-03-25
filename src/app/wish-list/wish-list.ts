@@ -14,9 +14,5 @@ export class WishList {
 
   wishes = input<WishItem[]>();
 
-  toggleItem(item: WishItem){
-  item.isComplete = !item.isComplete;
-  console.log(item);
-
-  }
+  
 }
