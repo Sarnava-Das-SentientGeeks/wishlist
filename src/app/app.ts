@@ -1,8 +1,9 @@
-import { Component, signal } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { WishItem } from '../shared/models/wishitem';
-import events from '../shared/services/EventService';
+import {EventService} from '../shared/services/EventService';
+import {WishService} from './WishService';
 
 import {WishList} from  './wish-list/wish-list';
 import {AddWishForm} from './add-wish-form/add-wish-form';
@@ -20,18 +21,25 @@ import { WishFilter } from "./wish-filter/wish-filter";
 
 
 
-export class App {
+export class App implements OnInit{
 
    items : WishItem[] = [
-    new WishItem(1,'To Learn Angular'),
-    new WishItem(2,'To Learn ASP.NET Core', true),
-    new WishItem(3,'To Learn ABP framework'),
+    // new WishItem(1,'To Learn Angular'),
+    // new WishItem(2,'To Learn ASP.NET Core', true),
+    // new WishItem(3,'To Learn ABP framework'),
     
   ];
 
-  constructor(){
-    events.listen('removeWish',(wish:any)=>{
-        console.log(wish);
+  ngOnInit(): void {
+    this.wishService.getWishes().subscribe((data:any)=>{
+      this.items =data;
+    });
+  }
+
+  constructor(private events: EventService, private wishService:WishService){
+    events.listen('removeWish',(id:any)=>{
+        // console.log(id);
+        this.items.splice(id,1); 
     })
   }
   // app_filter: any =()=>{}; -This was used for event binding for the output from the child

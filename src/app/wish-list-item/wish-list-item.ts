@@ -1,6 +1,6 @@
 import { Component,input,output } from '@angular/core';
 import { NgClass } from '@angular/common';
-import events from '../../shared/services/EventService';
+import {EventService} from '../../shared/services/EventService';
 
 @Component({
   selector: 'wish-list-item',
@@ -9,6 +9,8 @@ import events from '../../shared/services/EventService';
   styleUrl: './wish-list-item.css',
 })
 export class WishListItem {
+
+  constructor(private events: EventService){}
 
   wishText = input<string>();
   wishId = input<number>();
@@ -25,6 +27,7 @@ export class WishListItem {
     this.wishFulfillChange.emit(!this.wishFulfill());
   }
   removeWish(){
-    events.emit('removeWish',this.wishText());
+   
+    this.events.emit('removeWish',this.wishId());
   }
 }

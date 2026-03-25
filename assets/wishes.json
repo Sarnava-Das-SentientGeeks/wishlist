@@ -1,0 +1,6 @@
+[
+    {"id":0,"wishText":"Learn Angular","isComplete":false},
+    {"id":1,"wishText":"Learn C#","isComplete":true},
+    {"id":2,"wishText":"Learn ABP","isComplete":false}
+
+]
