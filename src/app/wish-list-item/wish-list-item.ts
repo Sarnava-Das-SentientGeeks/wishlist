@@ -1,5 +1,6 @@
 import { Component,input,output } from '@angular/core';
 import { NgClass } from '@angular/common';
+import events from '../../shared/services/EventService';
 
 @Component({
   selector: 'wish-list-item',
@@ -22,5 +23,8 @@ export class WishListItem {
   }
   toggleFulfill(){
     this.wishFulfillChange.emit(!this.wishFulfill());
+  }
+  removeWish(){
+    events.emit('removeWish',this.wishText());
   }
 }

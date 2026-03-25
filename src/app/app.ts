@@ -2,6 +2,7 @@ import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { WishItem } from '../shared/models/wishitem';
+import events from '../shared/services/EventService';
 
 import {WishList} from  './wish-list/wish-list';
 import {AddWishForm} from './add-wish-form/add-wish-form';
@@ -28,6 +29,11 @@ export class App {
     
   ];
 
+  constructor(){
+    events.listen('removeWish',(wish:any)=>{
+        console.log(wish);
+    })
+  }
   // app_filter: any =()=>{}; -This was used for event binding for the output from the child
     app_filter: any;
 

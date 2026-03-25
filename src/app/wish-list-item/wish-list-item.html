@@ -1,7 +1,10 @@
-<div class="form-check">
-    <li>
-        <label class="form-check-label" [ngClass]="cssClasses">
-        <input class ="checkbox" type = "checkbox" [checked]="wishFulfill()" [attr.data-index]="wishId()" (click)="toggleFulfill()"> {{wishText()}}
-        </label>
+
+    <li class="d-flex justify-content-between">
+        <div class="form-check">
+            <label class="form-check-label" [ngClass]="cssClasses">
+            <input class ="checkbox" type = "checkbox" [checked]="wishFulfill()" [attr.data-index]="wishId()" (click)="toggleFulfill()"> {{wishText()}}
+            </label>
+        </div>      
+        <div type="button" class="btn-close" (click)="removeWish()"></div>
     </li>
-</div>
+
