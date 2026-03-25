@@ -1,0 +1,23 @@
+<div class="row mt-3">
+           @if(wishes()?.length)
+        {
+          <ul class = "wish-list">
+            @for(item of wishes(); track item.id;let idx = $index,e=$even){
+              
+              <div class="form-check">
+                <li>
+                    <label class="form-check-label">
+                    <input class ="checkbox" type = "checkbox" [checked]="item.isComplete" [attr.data-index]="idx" (click)="toggleItem(item)"> {{item.wishText}}
+                    </label>
+                  </li>
+              </div>
+            }
+          @empty {
+              <li>There are no items.</li>
+            }
+        </ul>
+      }
+      @else {
+        <div>There are no items</div>
+      }
+    </div>
