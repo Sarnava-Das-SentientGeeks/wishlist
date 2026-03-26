@@ -23,7 +23,7 @@ import { WishFilter } from "./wish-filter/wish-filter";
 
 export class App implements OnInit{
 
-   items! : WishItem[];
+   items : WishItem[] =[];
   //  = [
     // new WishItem(1,'To Learn Angular'),
     // new WishItem(2,'To Learn ASP.NET Core', true),
