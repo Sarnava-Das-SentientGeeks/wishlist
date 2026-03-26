@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ReactiveFormsModule,FormControl,FormGroup } from '@angular/forms';
+import { ReactiveFormsModule,FormControl,FormGroup,Validator, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -8,9 +8,16 @@ import { ReactiveFormsModule,FormControl,FormGroup } from '@angular/forms';
   styleUrl: './contact.css',
 })
 export class Contact {
-    // contactForm = new FormGroup({
-      senderNameControl = new FormControl('Enter your name');
-      senderEmailControl = new FormControl('Enter your email');
-      senderMessageControl = new FormControl('Enter your message');
-    // })
+
+        contactForm = new FormGroup({
+          senderName : new FormControl('Enter your name',Validators.required),
+          senderEmail : new FormControl('Enter your email',[Validators.required, Validators.email]),
+          senderMessage : new FormControl('Enter your message',[Validators.required,Validators.minLength(10)]),
+    });
+
+
+    submitForm(){
+     
+      console.log(this.contactForm.valid);
+    }
 }
