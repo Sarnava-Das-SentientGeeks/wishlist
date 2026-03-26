@@ -11,7 +11,7 @@ export class Contact {
 
         contactForm = new FormGroup({
           senderName : new FormControl('Enter your name',Validators.required),
-          senderEmail : new FormControl('Enter your email',[Validators.required, Validators.email]),
+          senderEmail : new FormControl('',[Validators.required, Validators.email]),
           senderMessage : new FormControl('Enter your message',[Validators.required,Validators.minLength(10)]),
     });
 
