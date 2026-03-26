@@ -5,9 +5,9 @@ import { WishItem } from '../shared/models/wishitem';
 import {EventService} from '../shared/services/EventService';
 import {WishService} from './wish-service';
 
-import {WishList} from  './wish-list/wish-list';
-import {AddWishForm} from './add-wish-form/add-wish-form';
-import { WishFilter } from "./wish-filter/wish-filter";
+import {WishList} from  './wish/wish-list/wish-list';
+import {AddWishForm} from './wish/add-wish-form/add-wish-form';
+import { WishFilter } from "./wish/wish-filter/wish-filter";
 
 
 @Component({

@@ -1,5 +1,5 @@
 import { Component,input } from '@angular/core';
-import { WishItem } from '../../shared/models/wishitem';
+import { WishItem } from '../../../shared/models/wishitem';
 import {WishListItem} from '../wish-list-item/wish-list-item';
 
 @Component({

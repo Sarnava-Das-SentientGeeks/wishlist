@@ -1,5 +1,5 @@
 import { Component,input,output } from '@angular/core';
-import { WishItem } from '../../shared/models/wishitem';
+import { WishItem } from '../../../shared/models/wishitem';
 import { FormsModule } from '@angular/forms';
 
 const filters = [
