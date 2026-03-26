@@ -32,7 +32,7 @@ export class WishService {
 
     });
     //return this.http.get('assets/wishes.json?format=json',options);returns observable object
-     return this.http.get('assets/wishes12.json',options).pipe(catchError(this.handleError));
+     return this.http.get('assets/wishes.json',options).pipe(catchError(this.handleError));
   }
 
 
