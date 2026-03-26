@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 
 import { WishItem } from '../shared/models/wishitem';
 import {EventService} from '../shared/services/EventService';
-import {WishService} from './WishService';
+import {WishService} from './wish-service';
 
 import {WishList} from  './wish-list/wish-list';
 import {AddWishForm} from './add-wish-form/add-wish-form';
@@ -33,7 +33,7 @@ export class App implements OnInit{
 
   ngOnInit(): void {
     this.wishService.getWishes().subscribe((data:any)=>{
-      this.items =data;
+      this.items = data;
     });
   }
 
