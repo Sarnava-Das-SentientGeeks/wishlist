@@ -32,9 +32,10 @@ export class App implements OnInit{
   // ];
 
   ngOnInit(): void {
-    this.wishService.getWishes().subscribe((data:any)=>{
-      this.items = data;
-    });
+    this.wishService.getWishes().subscribe(
+      (data:any)=>{this.items = data;},
+      (error:any)=>{alert(error);}
+    );
   }
 
   constructor(private events: EventService, private wishService:WishService){
